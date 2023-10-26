@@ -1,0 +1,53 @@
+.hidden {
+   display: none;
+}
+.notHIdden{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.overlay {
+   position: fixed; 
+   top: 0; 
+   left: 0; 
+   width: 100%; 
+   height: 100%; 
+   background-color: rgba(0,0,0,0.7); 
+   z-index: 1;
+  
+}
+.overlay-content {
+  
+   padding: 20px;
+   border-radius: 8px;
+   background-color: rgb(220, 53, 69);
+   z-index: 2;
+}
+
+ .ordered-items-container {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid rgb(220, 53, 69);
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 1s ease, transform 1s ease;
+ }
+ .animate-card {
+   opacity: 1;
+   transform: scale(1);
+}
+.ordered-item {
+    margin: 10px 0;
+    padding: 5px;
+    background-color: rgb(220, 53, 69);
+    border: 1px solid rgb(220, 53, 69);
+    border-radius: 5px;
+}
+
+.JOKE{
+   opacity: 0;
+   transition: opacity 2s ease;
+}
+.Joke-Animate{
+   opacity: 1;
+}

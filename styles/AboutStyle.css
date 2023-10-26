@@ -1,0 +1,56 @@
+.CardAbout{
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+    background-color: rgb(220, 53, 69);
+    border-radius: 10px;
+ }
+
+ .main{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+ }
+ .ParMC{
+    padding: 5%;
+    color: yellow;
+    font-family: 'Almendra';
+}
+.Par{
+    color: black;
+    padding: 1%;
+}
+.midImage{
+    margin-left:3%; 
+    margin-right:3%
+}
+
+.teamImage{
+display: flex;
+flex-direction: column;
+}
+
+.RowImages{
+    display: flex; 
+    flex-direction:row
+}
+@media screen and (max-width:720px) {
+    .RowImages{
+        display: flex; 
+        flex-direction:column
+        }
+
+        .midImage{
+            margin-left:0%; 
+            margin-right:0%
+        }
+        
+       
+}
+.LInk {
+    text-decoration: none;
+}
