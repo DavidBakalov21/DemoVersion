@@ -1,28 +1,8 @@
+import defaultOrderCounts from "./food.js";
+
 class Cart {
   constructor() {
-    this.defaultOrderCounts = {
-      "Royal Cheese": { count: 0, price: 6.99 },
-      "Cheeseburger": { count: 0, price: 8.49 },
-      "Hamburger": { count: 0, price: 4.99 },
-      "McChicken": { count: 0, price: 4.49 },
-      "Double Royal Cheese": { count: 0, price: 9.99 },
-      "Chicken Roll": { count: 0, price: 5.79 },
-      "Medium fries": { count: 0, price: 5.19 },
-      "Large fries": { count: 0, price: 6.79 },
-      "Chicken McNuggets": { count: 0, price: 5.99 },
-      "Toast": { count: 0, price: 6.99 },
-      "Twister": { count: 0, price: 8.49 },
-      "Dips": { count: 0, price: 4.99 },
-      "Chefburger": { count: 0, price: 4.49 },
-      "Boxmaster": { count: 0, price: 9.99 },
-      "Bucket": { count: 0, price: 5.79 },
-      "BBQ pizza": { count: 0, price: 6.99 },
-      "Extravaganzza": { count: 0, price: 8.49 },
-      "Greece pizza": { count: 0, price: 4.99 },
-      "Grill pizza": { count: 0, price: 4.49 },
-      "Karbonara": { count: 0, price: 9.99 },
-      "Marharyta": { count: 0, price: 5.79 },
-    };
+    this.defaultOrderCounts = defaultOrderCounts;
     this.orderCounts =
       JSON.parse(localStorage.getItem("orderCounts")) ||
       this.defaultOrderCounts;
@@ -63,33 +43,33 @@ class Cart {
     totalElem.textContent = `Total: $${total.toFixed(2)}`;
     container.appendChild(totalElem);
   }
-  createReduceButton(key){
+  createReduceButton(key) {
     const reduceBtn = document.createElement("button");
     reduceBtn.textContent = "-";
     reduceBtn.classList.add("btn", "btn-danger");
     reduceBtn.style.marginLeft = "1%";
     reduceBtn.addEventListener("click", () => {
-      if(this.orderCounts[key].count>1){
-      this.orderCounts[key].count -= 1;
+      if (this.orderCounts[key].count > 1) {
+        this.orderCounts[key].count -= 1;
 
-      localStorage.setItem("orderCounts", JSON.stringify(this.orderCounts));
-      this.displayOrderCounts();
+        localStorage.setItem("orderCounts", JSON.stringify(this.orderCounts));
+        this.displayOrderCounts();
       }
     });
     return reduceBtn;
-}
-createAddButton(key){
-  const reduceBtn = document.createElement("button");
-  reduceBtn.textContent = "+";
-  reduceBtn.classList.add("btn", "btn-danger");
-  reduceBtn.style.marginLeft = "1%";
-  reduceBtn.addEventListener("click", () => {
-    this.orderCounts[key].count += 1;
-    localStorage.setItem("orderCounts", JSON.stringify(this.orderCounts));
-    this.displayOrderCounts();
-  });
-  return reduceBtn;
-}
+  }
+  createAddButton(key) {
+    const reduceBtn = document.createElement("button");
+    reduceBtn.textContent = "+";
+    reduceBtn.classList.add("btn", "btn-danger");
+    reduceBtn.style.marginLeft = "1%";
+    reduceBtn.addEventListener("click", () => {
+      this.orderCounts[key].count += 1;
+      localStorage.setItem("orderCounts", JSON.stringify(this.orderCounts));
+      this.displayOrderCounts();
+    });
+    return reduceBtn;
+  }
   createDeleteButton(key) {
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
@@ -150,3 +130,9 @@ function displayJoke(JOke) {
     contentJoke.classList.remove("Joke-Animate");
   }, 6000);
 }
+window.closeOverlay = closeOverlay;
+window.confirm = confirm;
+window.JOke = JOke;
+window.displayJoke = displayJoke;
+window.clearCart = clearCart;
+window.deleteOrder = deleteOrder;
