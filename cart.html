@@ -13,91 +13,74 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body id="root">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Icon" width="80">
-                Fast Food delivery
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" style="color: yellow;" href="cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact us</a>
-                    </li>
-                </ul>
+<body>
+    <div id="navbarPlaceholder"></div>
+    <div id="root">
+        <div id="overlay" class="overlay hidden" onclick="closeOverlay()">
+            <div class="overlay-content">
+                <h2 style="color: yellow;">Are you sure ?</h2>
+                <button class="btn btn-danger" style="color: yellow;" id="ChoiceText"
+                    onclick="deleteOrder()">Yes</button>
+                <button class="btn btn-danger" style="color: yellow;" id="ChoiceText"
+                    onclick="closeOverlay()">No</button>
             </div>
-        </nav>
-    </header>
-    <div id="overlay" class="overlay hidden" onclick="closeOverlay()">
-        <div class="overlay-content">
-            <h2 style="color: yellow;">Are you sure ?</h2>
-            <button class="btn btn-danger" style="color: yellow;" id="ChoiceText" onclick="deleteOrder()">Yes</button>
-            <button class="btn btn-danger" style="color: yellow;" id="ChoiceText" onclick="closeOverlay()">No</button>
+
         </div>
 
-    </div>
 
+        <div id="overlayConfirm" class="overlay hidden" onclick="closeOverlayConfirm()">
+            <div class="overlay-content">
+                <h2 style="color: yellow;">Are you sure you want to confirm ?</h2>
+                <button class="btn btn-danger" style="color: yellow;" id="ChoiceText"
+                    onclick="deleteOrderConfirm()">Yes</button>
+                <button class="btn btn-danger" style="color: yellow;" id="ChoiceText"
+                    onclick="closeOverlayConfirm()">No</button>
+            </div>
 
-    <div id="overlayConfirm" class="overlay hidden" onclick="closeOverlayConfirm()">
-        <div class="overlay-content">
-            <h2 style="color: yellow;">Are you sure you want to confirm ?</h2>
-            <button class="btn btn-danger" style="color: yellow;" id="ChoiceText" onclick="deleteOrderConfirm()">Yes</button>
-            <button class="btn btn-danger" style="color: yellow;" id="ChoiceText" onclick="closeOverlayConfirm()">No</button>
         </div>
 
-    </div>
+        <div class="ordered-items-container" id="orderedItems"></div>
+        <div class="ordered-items-container">
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-danger" style="color: yellow;">Food Name</span>
+                <input type="text" id="nameF" class="form-control" placeholder="Enter food name" aria-label="Food Name">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-danger" style="color: yellow;">Quantity</span>
+                <input type="number" id="quantityF" class="form-control" placeholder="Enter quantity"
+                    aria-label="Quantity">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text bg-danger" style="color: yellow;">Price</span>
+                <input type="number" id="priceF" class="form-control" placeholder="Enter price per item"
+                    aria-label="Price per item">
+            </div>
+            <div style="display: flex; justify-content:center; margin-top:3%">
+                <button class="btn btn-danger" style="color: yellow;" onclick="AddToCart()">Add</button>
+            </div>
+        </div>
 
-    <div class="ordered-items-container" id="orderedItems"></div>
-    <div class="ordered-items-container">
-        <div class="input-group mb-3">
-            <span class="input-group-text bg-danger" style="color: yellow;">Food Name</span>
-            <input type="text" id="nameF" class="form-control" placeholder="Enter food name" aria-label="Food Name">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text bg-danger" style="color: yellow;">Quantity</span>
-            <input type="number" id="quantityF" class="form-control" placeholder="Enter quantity" aria-label="Quantity">
-        </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text bg-danger" style="color: yellow;">Price</span>
-            <input type="number" id="priceF" class="form-control" placeholder="Enter price per item" aria-label="Price per item">
-        </div>
         <div style="display: flex; justify-content:center; margin-top:3%">
-            <button class="btn btn-danger" style="color: yellow;" onclick="AddToCart()">Add</button>
-        </div>
-    </div>
-    
-    <div style="display: flex; justify-content:center; margin-top:3%">
-        <button class="btn btn-danger" style="color: yellow;" onclick="clearCart()">Clear cart</button>
-        <button class="btn btn-danger" style="margin-left: 2%; color: yellow;" onclick="confirmConfirm()">Confirm
-            order</button>
-    </div>
-
-    <div style="margin-top: 10%; display:flex; justify-content:center; flex-direction:column;">
-        <button class="btn btn-danger" onclick="JOke()" style="color: yellow;">Tell me a joke</button>
-        <div id="contentJoke" class="JOKE"
-            style="display: flex; justify-content:center; background-color:rgb(220, 53, 69)">
-            <h2 id="Joke"></h2>
+            <button class="btn btn-danger" style="color: yellow;" onclick="clearCart()">Clear cart</button>
+            <button class="btn btn-danger" style="margin-left: 2%; color: yellow;" onclick="confirmConfirm()">Confirm
+                order</button>
         </div>
 
+        <div style="margin-top: 10%; display:flex; justify-content:center; flex-direction:column;">
+            <button class="btn btn-danger" onclick="JOke()" style="color: yellow;">Tell me a joke</button>
+            <div id="contentJoke" class="JOKE"
+                style="display: flex; justify-content:center; background-color:rgb(220, 53, 69)">
+                <h2 id="Joke"></h2>
+            </div>
+
+        </div>
+        <script src="scripts/nav.js"></script>
+        <script type="module" src="scripts/cart.js"></script>
+        <script type="module" src="scripts/router.js"></script>
+        <script type="module" src="scripts/food.js"></script>
+        <script type="module" src="scripts/test.js"></script>
+
     </div>
-    <script type="module" src="scripts/cart.js"></script>
-    <script type="module" src="scripts/router.js"></script>
-    <script type="module" src="scripts/food.js"></script>
-    <script type="module" src="scripts/test.js"></script>
 </body>
 
 </html>

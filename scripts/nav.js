@@ -1,8 +1,4 @@
-function getNavTemplate(activeRoute = '/home') {
-    let isActiveColor = 'yellow'
-
-    let getCurrentColor = (navItem) => isActiveColor === activeRoute ? isActiveColor : ''
-
+function getNavTemplate() {
     return `
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
             <a class="navbar-brand" href="#">
@@ -16,16 +12,16 @@ function getNavTemplate(activeRoute = '/home') {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" style="color: {getCurrentColor('/home')};" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  style="color: {getCurrentColor('/about')};" href="#" onclick="navItemClick('/about')">About us</a>
+                        <a class="nav-link" href="#about">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  style="color: {getCurrentColor('/about')};" href="cart.html">Cart</a>
+                        <a class="nav-link"  href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="navItemClick('/contact')">Contact us</a>
+                        <a class="nav-link" href="#contact">Contact us</a>
                     </li>
                 </ul>
             </div>

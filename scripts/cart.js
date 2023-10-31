@@ -75,20 +75,20 @@ class Cart {
       alert(`"${name}" already in cart!`);
       return;
     }
-    
+
     if (price <= 0 || isNaN(price)) {
       alert("Price must be a positive number!");
       return;
     }
-  
+
     if (count < 0 || isNaN(count) || !Number.isInteger(+count)) {
       alert("Count must be a non-negative integer!");
       return;
     }
     this.orderCounts[name] = { count: parseInt(count), price: price };
     localStorage.setItem("orderCounts", JSON.stringify(this.orderCounts));
-  
-this.displayOrderCounts();
+
+    this.displayOrderCounts();
   }
   createDeleteButton(key) {
     const deleteBtn = document.createElement("button");
@@ -104,13 +104,14 @@ this.displayOrderCounts();
   }
 }
 window.onload = function () {
+  const navbarPlaceholder = document.getElementById("navbarPlaceholder");
+  navbarPlaceholder.innerHTML = getNavTemplate();
   const cards = document.querySelectorAll(".ordered-items-container");
   cards.forEach((card) => {
     card.classList.add("animate-card");
   });
 };
 const cart = new Cart();
-
 
 function clearCart() {
   document.getElementById("overlay").classList.remove("hidden");
@@ -135,11 +136,10 @@ function closeOverlayConfirm() {
   document.getElementById("overlayConfirm").classList.remove(".notHIdden");
 }
 
-function deleteOrderConfirm(){
+function deleteOrderConfirm() {
   deleteOrder();
   alert("Your order is on its way to you");
 }
-
 
 function JOke() {
   fetch("https://v2.jokeapi.dev/joke/Programming")
@@ -159,11 +159,11 @@ function displayJoke(JOke) {
     contentJoke.classList.remove("Joke-Animate");
   }, 6000);
 }
-function AddToCart(){
-  let name=document.getElementById('nameF').value;
-  let quantity = parseInt(document.getElementById('quantityF').value, 10);
-  let price = parseFloat(document.getElementById('priceF').value);
-  cart.addItem(name,price,quantity);
+function AddToCart() {
+  let name = document.getElementById("nameF").value;
+  let quantity = parseInt(document.getElementById("quantityF").value, 10);
+  let price = parseFloat(document.getElementById("priceF").value);
+  cart.addItem(name, price, quantity);
 }
 window.closeOverlay = closeOverlay;
 window.confirm = confirm;
@@ -171,8 +171,8 @@ window.JOke = JOke;
 window.displayJoke = displayJoke;
 window.clearCart = clearCart;
 window.deleteOrder = deleteOrder;
-window.AddToCart=AddToCart;
-window.deleteOrderConfirm=deleteOrderConfirm;
-window.confirmConfirm=confirmConfirm;
-window.closeOverlayConfirm=closeOverlayConfirm;
+window.AddToCart = AddToCart;
+window.deleteOrderConfirm = deleteOrderConfirm;
+window.confirmConfirm = confirmConfirm;
+window.closeOverlayConfirm = closeOverlayConfirm;
 //module.exports = Cart;

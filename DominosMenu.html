@@ -13,100 +13,78 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body id="root">
-    <link rel="stylesheet" type="text/css" href="styles/Menu.css" />
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Icon" width="80">
-                Fast Food delivery
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart</a>
-                    </li>
+<body>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact us</a>
-                    </li>
-                </ul>
+    <div id="navbarPlaceholder"></div>
+    <div id="root">
+        <link rel="stylesheet" type="text/css" href="styles/Menu.css" />
+        <div class="RowImages">
+            <div class="Card MR">
+                <img src="img/dominos/bbq.png" class="imgM" />
+                <h5 style="color: yellow;">BBQ pizza</h5>
+                <p style="color: yellow;">6.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('BBQ pizza')" class="btn btn-danger">Add to
+                    order</button>
             </div>
-        </nav>
-    </header>
-
-
-    <div class="RowImages">
-        <div class="Card MR">
-            <img src="img/dominos/bbq.png" class="imgM" />
-            <h5 style="color: yellow;">BBQ pizza</h5>
-            <p style="color: yellow;">6.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('BBQ pizza')" class="btn btn-danger">Add to
-                order</button>
+            <div class="Card">
+                <img src="img/dominos/extravaganzza.png" class="imgM" />
+                <h5 style="color: yellow;">Extravaganzza</h5>
+                <p style="color: yellow;">8.49$</p>
+                <button style="color: yellow;" onclick="addToOrder('Extravaganzza')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card ML">
+                <img src="img/dominos/greece.png" class="imgM" />
+                <h5 style="color: yellow;">Greece pizza</h5>
+                <p style="color: yellow;">4.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Greece pizza')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
         </div>
-        <div class="Card">
-            <img src="img/dominos/extravaganzza.png" class="imgM" />
-            <h5 style="color: yellow;">Extravaganzza</h5>
-            <p style="color: yellow;">8.49$</p>
-            <button style="color: yellow;" onclick="addToOrder('Extravaganzza')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-        <div class="Card ML">
-            <img src="img/dominos/greece.png" class="imgM" />
-            <h5 style="color: yellow;">Greece pizza</h5>
-            <p style="color: yellow;">4.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Greece pizza')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-    </div>
-    <div class="RowImages">
-        <div class="Card MR">
-            <img src="img/dominos/grill.png" class="imgM" />
-            <h5 style="color: yellow;">Grill pizza</h5>
-            <p style="color: yellow;">4.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Grill pizza')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-        <div class="Card">
-            <img src="img/dominos/karbonara.png" class="imgM" />
-            <h5 style="color: yellow;">Karbonara</h5>
-            <p style="color: yellow;">9.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Karbonara')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-        <div class="Card ML">
-            <img src="img/dominos/marharyta.png" class="imgM" />
-            <h5 style="color: yellow;">Marharyta</h5>
-            <p style="color: yellow;">5.79$</p>
-            <button style="color: yellow;" onclick="addToOrder('Marharyta')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-    </div>
-
-    <div id="overlay" class="overlay hidden" onclick="closeOverlay()">
-        <div class="overlay-content">
-            <h2 style="color: yellow;">Great Choice</h2>
-            <h3 style="color: yellow;" id="ChoiceText"></h3>
-            <p style="color: yellow;" id="amount"></p>
+        <div class="RowImages">
+            <div class="Card MR">
+                <img src="img/dominos/grill.png" class="imgM" />
+                <h5 style="color: yellow;">Grill pizza</h5>
+                <p style="color: yellow;">4.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Grill pizza')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card">
+                <img src="img/dominos/karbonara.png" class="imgM" />
+                <h5 style="color: yellow;">Karbonara</h5>
+                <p style="color: yellow;">9.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Karbonara')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card ML">
+                <img src="img/dominos/marharyta.png" class="imgM" />
+                <h5 style="color: yellow;">Marharyta</h5>
+                <p style="color: yellow;">5.79$</p>
+                <button style="color: yellow;" onclick="addToOrder('Marharyta')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
         </div>
 
+        <div id="overlay" class="overlay hidden" onclick="closeOverlay()">
+            <div class="overlay-content">
+                <h2 style="color: yellow;">Great Choice</h2>
+                <h3 style="color: yellow;" id="ChoiceText"></h3>
+                <p style="color: yellow;" id="amount"></p>
+            </div>
+
+        </div>
+        <div style="display: flex; justify-content:center; margin-top:5%">
+            <button class="btn btn-danger"><a style="color:yellow; text-decoration: none;" href="cart.html">Check
+                    out</a></button>
+        </div>
+        <script src="scripts/nav.js"></script>
+        <script>
+            const navbarPlaceholder = document.getElementById('navbarPlaceholder');
+            navbarPlaceholder.innerHTML = getNavTemplate();
+        </script>
+        <script type="module" src="scripts/Menu.js"></script>
+        <script type="module" src="scripts/router.js"></script>
     </div>
-    <div style="display: flex; justify-content:center; margin-top:5%">
-        <button class="btn btn-danger"><a style="color:yellow; text-decoration: none;" href="cart.html">Check
-                out</a></button>
-    </div>
-    <script type="module" src="scripts/Menu.js"></script>
-    <script type="module" src="scripts/router.js"></script>
 </body>
 
 </html>

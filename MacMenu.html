@@ -13,122 +13,100 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
-<body id="root">
-    <link rel="stylesheet" type="text/css" href="styles/Menu.css" />
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo.png" alt="Icon" width="80">
-                Fast Food delivery
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="cart.html">Cart</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact us</a>
-                    </li>
-                </ul>
+<body>
+    <div id="navbarPlaceholder"></div>
+    <div id="root">
+        <link rel="stylesheet" type="text/css" href="styles/Menu.css" />
+        <div class="RowImages">
+            <div class="Card MR">
+                <img src="img/mac/royal_cheese.png" class="imgM" />
+                <h5 style="color: yellow;">Royal Cheese</h5>
+                <p style="color: yellow;">6.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Royal Cheese')" class="btn btn-danger">Add to
+                    order</button>
             </div>
-        </nav>
-    </header>
-
-
-    <div class="RowImages">
-        <div class="Card MR">
-            <img src="img/mac/royal_cheese.png" class="imgM" />
-            <h5 style="color: yellow;">Royal Cheese</h5>
-            <p style="color: yellow;">6.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Royal Cheese')" class="btn btn-danger">Add to
-                order</button>
+            <div class="Card">
+                <img src="img/mac/cheeseburger.png" style="padding: 5%;" class="imgM" />
+                <h5 style="color: yellow;">Cheeseburger</h5>
+                <p style="color: yellow;">8.49$</p>
+                <button style="color: yellow;" onclick="addToOrder('Cheeseburger')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card ML">
+                <img src="img/mac/Hamburger.png" style="padding: 6%;" class="imgM" />
+                <h5 style="color: yellow;">Hamburger</h5>
+                <p style="color: yellow;">4.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Hamburger')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
         </div>
-        <div class="Card">
-            <img src="img/mac/cheeseburger.png" style="padding: 5%;" class="imgM" />
-            <h5 style="color: yellow;">Cheeseburger</h5>
-            <p style="color: yellow;">8.49$</p>
-            <button style="color: yellow;" onclick="addToOrder('Cheeseburger')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-        <div class="Card ML">
-            <img src="img/mac/Hamburger.png" style="padding: 6%;" class="imgM" />
-            <h5 style="color: yellow;">Hamburger</h5>
-            <p style="color: yellow;">4.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Hamburger')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-    </div>
-    <div class="RowImages">
-        <div class="Card MR">
-            <img src="img/mac/McChicken.png" class="imgM" />
-            <h5 style="color: yellow;">McChicken</h5>
-            <p style="color: yellow;">4.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('McChicken')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-        <div class="Card">
-            <img src="img/mac/doubleCheese.png" class="imgM" />
-            <h5 style="color: yellow;">Double Royal Cheese</h5>
-            <p style="color: yellow;">9.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Double Royal Cheese')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-        <div class="Card ML">
-            <img src="img/mac/roll.png" class="imgM" />
-            <h5 style="color: yellow;">Chicken Roll</h5>
-            <p style="color: yellow;">5.79$</p>
-            <button style="color: yellow;" onclick="addToOrder('Chicken Roll')" class="btn btn-danger">Add to
-                order</button>
-        </div>
-    </div>
-
-    <div id="overlay" class="overlay hidden" onclick="closeOverlay()">
-        <div class="overlay-content">
-            <h2 style="color: yellow;">Great Choice</h2>
-            <h3 style="color: yellow;" id="ChoiceText"></h3>
-            <p style="color: yellow;" id="amount"></p>
+        <div class="RowImages">
+            <div class="Card MR">
+                <img src="img/mac/McChicken.png" class="imgM" />
+                <h5 style="color: yellow;">McChicken</h5>
+                <p style="color: yellow;">4.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('McChicken')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card">
+                <img src="img/mac/doubleCheese.png" class="imgM" />
+                <h5 style="color: yellow;">Double Royal Cheese</h5>
+                <p style="color: yellow;">9.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Double Royal Cheese')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card ML">
+                <img src="img/mac/roll.png" class="imgM" />
+                <h5 style="color: yellow;">Chicken Roll</h5>
+                <p style="color: yellow;">5.79$</p>
+                <button style="color: yellow;" onclick="addToOrder('Chicken Roll')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
         </div>
 
-    </div>
-    <div class="RowImages">
-        <div class="Card MR">
-            <img src="img/mac/friesM.png" class="imgM" />
-            <h5 style="color: yellow;">Medium fries</h5>
-            <p style="color: yellow;">5.19$</p>
-            <button style="color: yellow;" onclick="addToOrder('Medium fries')" class="btn btn-danger">Add to
-                order</button>
+        <div id="overlay" class="overlay hidden" onclick="closeOverlay()">
+            <div class="overlay-content">
+                <h2 style="color: yellow;">Great Choice</h2>
+                <h3 style="color: yellow;" id="ChoiceText"></h3>
+                <p style="color: yellow;" id="amount"></p>
+            </div>
+
         </div>
-        <div class="Card">
-            <img src="img/mac/friesL.png" class="imgM" />
-            <h5 style="color: yellow;">Large fries</h5>
-            <p style="color: yellow;">6.79$</p>
-            <button style="color: yellow;" onclick="addToOrder('Large fries')" class="btn btn-danger">Add to
-                order</button>
+        <div class="RowImages">
+            <div class="Card MR">
+                <img src="img/mac/friesM.png" class="imgM" />
+                <h5 style="color: yellow;">Medium fries</h5>
+                <p style="color: yellow;">5.19$</p>
+                <button style="color: yellow;" onclick="addToOrder('Medium fries')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card">
+                <img src="img/mac/friesL.png" class="imgM" />
+                <h5 style="color: yellow;">Large fries</h5>
+                <p style="color: yellow;">6.79$</p>
+                <button style="color: yellow;" onclick="addToOrder('Large fries')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
+            <div class="Card ML">
+                <img src="img/mac/nuggets.png" class="imgM" />
+                <h5 style="color: yellow;">Chicken McNuggets</h5>
+                <p style="color: yellow;">5.99$</p>
+                <button style="color: yellow;" onclick="addToOrder('Chicken McNuggets')" class="btn btn-danger">Add to
+                    order</button>
+            </div>
         </div>
-        <div class="Card ML">
-            <img src="img/mac/nuggets.png" class="imgM" />
-            <h5 style="color: yellow;">Chicken McNuggets</h5>
-            <p style="color: yellow;">5.99$</p>
-            <button style="color: yellow;" onclick="addToOrder('Chicken McNuggets')" class="btn btn-danger">Add to
-                order</button>
+        <div style="display: flex; justify-content:center; margin-top:5%">
+            <button class="btn btn-danger"><a style="color:yellow; text-decoration: none;" href="cart.html">Check
+                    out</a></button>
         </div>
+        <script src="scripts/nav.js"></script>
+        <script>
+            const navbarPlaceholder = document.getElementById('navbarPlaceholder');
+            navbarPlaceholder.innerHTML = getNavTemplate();
+        </script>
+        <script type="module" src="scripts/router.js"></script>
+        <script type="module" src="scripts/Menu.js"></script>
     </div>
-    <div style="display: flex; justify-content:center; margin-top:5%">
-        <button class="btn btn-danger"><a style="color:yellow; text-decoration: none;" href="cart.html">Check
-                out</a></button>
-    </div>
-    <script type="module" src="scripts/router.js"></script>
-    <script type="module" src="scripts/Menu.js"></script>
 </body>
 
 </html>
