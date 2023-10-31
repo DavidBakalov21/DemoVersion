@@ -48,15 +48,15 @@ const contact = `
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="navItemClick('/about')">About us</a>
+                    <a class="nav-link" href="#about" >About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="cart.html">Cart</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: yellow; margin-bottom:4%"
-                        onclick="navItemClick('/contact')">Contact us</a>
+                    <a class="nav-link" href="#contact" style="color: yellow; margin-bottom:4%"
+                        >Contact us</a>
                 </li>
             </ul>
         </div>

@@ -30,13 +30,13 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="navItemClick('/about')">About us</a>
+                        <a class="nav-link" href="#about">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="color: yellow;" href="cart.html">Cart</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="navItemClick('/contact')">Contact us</a>
+                        <a class="nav-link" href="#contact">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -50,10 +50,39 @@
         </div>
 
     </div>
+
+
+    <div id="overlayConfirm" class="overlay hidden" onclick="closeOverlayConfirm()">
+        <div class="overlay-content">
+            <h2 style="color: yellow;">Are you sure you want to confirm ?</h2>
+            <button class="btn btn-danger" style="color: yellow;" id="ChoiceText" onclick="deleteOrderConfirm()">Yes</button>
+            <button class="btn btn-danger" style="color: yellow;" id="ChoiceText" onclick="closeOverlayConfirm()">No</button>
+        </div>
+
+    </div>
+
     <div class="ordered-items-container" id="orderedItems"></div>
+    <div class="ordered-items-container">
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-danger" style="color: yellow;">Food Name</span>
+            <input type="text" id="nameF" class="form-control" placeholder="Enter food name" aria-label="Food Name">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-danger" style="color: yellow;">Quantity</span>
+            <input type="number" id="quantityF" class="form-control" placeholder="Enter quantity" aria-label="Quantity">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text bg-danger" style="color: yellow;">Price</span>
+            <input type="number" id="priceF" class="form-control" placeholder="Enter price per item" aria-label="Price per item">
+        </div>
+        <div style="display: flex; justify-content:center; margin-top:3%">
+            <button class="btn btn-danger" style="color: yellow;" onclick="AddToCart()">Add</button>
+        </div>
+    </div>
+    
     <div style="display: flex; justify-content:center; margin-top:3%">
         <button class="btn btn-danger" style="color: yellow;" onclick="clearCart()">Clear cart</button>
-        <button class="btn btn-danger" style="margin-left: 2%; color: yellow;" onclick="confirm()">Confirm
+        <button class="btn btn-danger" style="margin-left: 2%; color: yellow;" onclick="confirmConfirm()">Confirm
             order</button>
     </div>
 
@@ -67,6 +96,8 @@
     </div>
     <script type="module" src="scripts/cart.js"></script>
     <script type="module" src="scripts/router.js"></script>
+    <script type="module" src="scripts/food.js"></script>
+    <script type="module" src="scripts/test.js"></script>
 </body>
 
 </html>

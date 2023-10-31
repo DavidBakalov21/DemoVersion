@@ -16,14 +16,14 @@ const about = `
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: yellow; " onclick="navItemClick('/about')">About us</a>
+                    <a class="nav-link" href="#about#" style="color: yellow; ">About us</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="cart.html">Cart</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="navItemClick('/contact')">Contact us</a>
+                    <a class="nav-link" href="#contact">Contact us</a>
                 </li>
             </ul>
         </div>
@@ -60,7 +60,7 @@ const about = `
         <p class="Par">We're not just delivering food, we're building a community. If you're a customer, restaurant, or
             want to join our team, come with us on this journey. Let's change fast-food delivery together.</p>
         <button class="btn btn-danger" style="color: yellow; margin-bottom:4%"><a class="LInk" style="color: yellow;"
-                href="#" onclick="navItemClick('/contact')">Join us</a></button>
+                href="#contact">Join us</a></button>
     </div>
 
 
