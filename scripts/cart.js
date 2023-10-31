@@ -12,6 +12,9 @@ class Cart {
   }
   displayOrderCounts() {
     let container = document.getElementById("orderedItems");
+    if (!container) {
+      return;
+    }
     container.innerHTML = "";
 
     let total = 0;
@@ -71,7 +74,7 @@ class Cart {
     return reduceBtn;
   }
   addItem(name, price, count) {
-    if (this.defaultOrderCounts[name]) {
+    if (this.orderCounts[name]) {
       alert(`"${name}" already in cart!`);
       return;
     }
@@ -80,7 +83,6 @@ class Cart {
       alert("Price must be a positive number!");
       return;
     }
-
     if (count < 0 || isNaN(count) || !Number.isInteger(+count)) {
       alert("Count must be a non-negative integer!");
       return;
@@ -105,6 +107,9 @@ class Cart {
 }
 window.onload = function () {
   const navbarPlaceholder = document.getElementById("navbarPlaceholder");
+  if (!navbarPlaceholder) {
+    return;
+  }
   navbarPlaceholder.innerHTML = getNavTemplate();
   const cards = document.querySelectorAll(".ordered-items-container");
   cards.forEach((card) => {
@@ -175,4 +180,3 @@ window.AddToCart = AddToCart;
 window.deleteOrderConfirm = deleteOrderConfirm;
 window.confirmConfirm = confirmConfirm;
 window.closeOverlayConfirm = closeOverlayConfirm;
-
