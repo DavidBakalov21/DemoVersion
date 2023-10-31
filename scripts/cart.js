@@ -175,4 +175,4 @@ window.AddToCart = AddToCart;
 window.deleteOrderConfirm = deleteOrderConfirm;
 window.confirmConfirm = confirmConfirm;
 window.closeOverlayConfirm = closeOverlayConfirm;
-//module.exports = Cart;
+
