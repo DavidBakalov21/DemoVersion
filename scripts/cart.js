@@ -1,6 +1,6 @@
 import defaultOrderCounts from "./food.js";
 
-class Cart {
+export class Cart {
   constructor() {
     this.defaultOrderCounts = defaultOrderCounts;
     this.orderCounts =
@@ -83,7 +83,7 @@ class Cart {
       alert("Price must be a positive number!");
       return;
     }
-    if (count < 0 || isNaN(count) || !Number.isInteger(+count)) {
+    if (count <= 0 || isNaN(count)) {
       alert("Count must be a non-negative integer!");
       return;
     }
